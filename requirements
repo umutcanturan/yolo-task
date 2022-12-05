@@ -1,0 +1,33 @@
+C# Developer Test Tasks
+Please implement tasks in a new asp.net core project (.NET 5 - 6) and map each of the
+question execution to a controller action (you can choose naming, format of
+inputs/outputs) so it can be run just by calling some urls on the project.
+Add a Dockerfile to the project, so it can be built and run inside a docker container.
+Dockerfile should support manual building and running. Please provide running
+commands if some specific port mapping or environment variables are needed.
+Hint: You can also add Swagger to provide a simple minimal UI.
+1. Please invert the following text:
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+anim id est laborum."
+2. Given a function A that runs a loop of 1...1000 and emits some data (can be a
+number from 1 to 1000) and it needs to pass this data to a second function B that has a
+processing delay of this data of 0.1 second and returns true, when it has finished
+processing the data. Write code that will allow A to work as fast as it can without
+blocking, but still make sure that B has processed all of the data (of course, after B has
+finished).
+Choose any pattern as you wish, can be events/direct calls, any other solution you can
+think of.
+Hint: Function A can be implemented without directly calling function B.
+3. Using any of these files (or you can choose your own): Test Files (hetzner.de)
+Calculate a SHA hash (in hex form) without fully keeping the files in memory at a single
+moment of time.
+4. Given the 2 queries in the link below. Please write a function that fetches all the
+assets and then fetches the prices for the first 100 of them in batches of 20 (e.g. total is
+100, do 20 at the same time, another 20 and so on).
+Blocktap Query Explorer 
+Hint: You can see the queries that this explorer makes using the browser developer
+tools network tab.
