@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\yolo.common\yolo.common.csproj" />
-    <ProjectReference Include="..\yolo.core\yolo.core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="implementations\" />
+    <None Remove="interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="implementations\" />
+    <Folder Include="interfaces\" />
   </ItemGroup>
 </Project>
