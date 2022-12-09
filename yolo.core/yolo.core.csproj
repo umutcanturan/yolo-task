@@ -9,9 +9,11 @@
   <ItemGroup>
     <None Remove="configurations\" />
     <None Remove="Microsoft.Extensions.DependencyInjection" />
+    <None Remove="exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="configurations\" />
+    <Folder Include="exceptions\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\yolo.service\yolo.service.csproj" />

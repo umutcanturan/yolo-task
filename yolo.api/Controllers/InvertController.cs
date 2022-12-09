@@ -40,7 +40,7 @@ namespace yolo.api.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-
+            throw new Exception("test 3");
             return Ok(_stringService.Reverse(_appData.ReverseStr));
         }
     }
