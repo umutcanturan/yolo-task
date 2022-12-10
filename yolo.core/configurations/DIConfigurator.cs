@@ -2,6 +2,10 @@
 using Microsoft.Extensions.DependencyInjection;
 using yolo.service.implementations;
 using yolo.service.interfaces;
+using MediatR;
+using System.Reflection;
+using yolo.common.queries;
+using yolo.service.commands.commandHandlers;
 
 namespace yolo.core.configurations
 {
@@ -9,7 +13,11 @@ namespace yolo.core.configurations
 	{
 		public static void Inject(IServiceCollection services)
 		{
-			services.AddSingleton<IStringService, StringService>();
+            services.AddMediatR(typeof(FunctionBCommand).GetTypeInfo().Assembly);
+			services.AddMediatR(typeof(FunctionBCommandHandler).GetTypeInfo().Assembly);
+
+            services.AddSingleton<IStringService, StringService>();
+			services.AddScoped<IFunctionService, FunctionService>();
 		}
 	}
 }

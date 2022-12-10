@@ -16,9 +16,12 @@
     <Folder Include="exceptions\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\yolo.service.commands\yolo.service.commands.csproj" />
     <ProjectReference Include="..\yolo.service\yolo.service.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 </Project>
