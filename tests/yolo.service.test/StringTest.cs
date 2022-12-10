@@ -20,8 +20,31 @@ namespace yolo.service.test
 			var result = stringService.Reverse(item);
             //Assert
             Assert.IsTrue(result == "tset");
-			
 		}
-	}
+
+		[TestMethod]
+		public void Reverse_Empty()
+		{
+            //Arrange
+            string item = string.Empty;
+            var stringService = new StringService();
+            //Act
+            var result = stringService.Reverse(item);
+            //Assert
+            Assert.IsTrue(result == string.Empty);
+        }
+
+        [TestMethod]
+        public void Reverse_Null()
+        {
+            //Arrange
+            string item = null;
+            var stringService = new StringService();
+            //Act
+            var result = stringService.Reverse(item);
+            //Assert
+            Assert.IsTrue(result == string.Empty);
+        }
+    }
 }
 
