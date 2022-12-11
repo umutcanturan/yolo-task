@@ -16,9 +16,9 @@ namespace yolo.api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(bool useEvent = false)
         {
-            await _functionService.FunctionA();
+            await _functionService.FunctionA(useEvent);
             return Ok("Completed");
         }
     }
