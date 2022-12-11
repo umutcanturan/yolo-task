@@ -7,13 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="extensions\**" />
+    <EmbeddedResource Remove="extensions\**" />
+    <None Remove="extensions\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="models\" />
     <None Remove="extensions\" />
     <None Remove="Newtonsoft.Json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="models\" />
-    <Folder Include="extensions\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MediatR" Version="11.1.0" />

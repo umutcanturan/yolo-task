@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using yolo.common.queries;
+using yolo.common.commands;
 using yolo.service.interfaces;
 
 namespace yolo.service.commands.commandHandlers

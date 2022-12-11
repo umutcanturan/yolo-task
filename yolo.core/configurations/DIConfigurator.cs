@@ -4,7 +4,7 @@ using yolo.service.implementations;
 using yolo.service.interfaces;
 using MediatR;
 using System.Reflection;
-using yolo.common.queries;
+using yolo.common.commands;
 using yolo.service.commands.commandHandlers;
 
 namespace yolo.core.configurations
