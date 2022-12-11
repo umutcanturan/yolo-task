@@ -23,6 +23,7 @@ namespace yolo.service.implementations
         {
             for(int i = 1; i <= 1000; i++)
             {
+                // the logic can be implemented with two different implementation of the same function/interface.
                 if(useEvent)
                 {
                     // this function will fire new event for each time called.
@@ -37,7 +38,6 @@ namespace yolo.service.implementations
             }
         }
 
-       
         public async Task<bool> FunctionB(int item)
         {
             await Task.Delay(100);
