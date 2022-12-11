@@ -1,10 +1,12 @@
 ﻿using MediatR;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using yolo.common.commands;
+using yolo.common.events;
 using yolo.service.interfaces;
 
 namespace yolo.service.implementations
@@ -17,18 +19,42 @@ namespace yolo.service.implementations
             _bus= bus;
         }
 
-        public async Task FunctionA()
+        public async Task FunctionA(bool useEvent)
         {
             for(int i = 1; i <= 1000; i++)
             {
-                var result = await _bus.Send(new FunctionBCommand(i));
+                if(useEvent)
+                {
+                    // this function will fire new event for each time called.
+                    FunctionAEvent(i);
+                }
+                else
+                {
+                    // mediatr usage
+                    var result = await _bus.Send(new FunctionBCommand(i));
+                }
+                
             }
         }
 
+       
         public async Task<bool> FunctionB(int item)
         {
             await Task.Delay(100);
             return true;
+        }
+        private async Task FunctionAEvent(int i)
+        {
+            var bEvent = new BEvent();
+            bEvent.ProcessCompleted += (sender, e) =>
+            {
+                if (e)
+                {
+                    var message = "success";
+                }
+            };
+
+            bEvent.StartProcess(i, FunctionB);
         }
     }
 }
