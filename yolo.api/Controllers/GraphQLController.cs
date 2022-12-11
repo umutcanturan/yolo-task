@@ -17,8 +17,7 @@ namespace yolo.api.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var list = await _assetService.GetAssets();
-            return Ok(list);
+            return Ok(await _assetService.FetchMarketPrices());
         }
     }
 }

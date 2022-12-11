@@ -9,6 +9,8 @@ namespace yolo.service.interfaces
 {
     public interface IAssetService
     {
-        public Task<IEnumerable<Asset>> GetAssets(int limit = 20, int offset = 0);
+        public Task<IEnumerable<Asset>> FetchAllAssets();
+
+        public Task<IEnumerable<Market>> FetchMarketPrices();
     }
 }

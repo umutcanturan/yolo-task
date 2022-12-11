@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace yolo.common.models
 {
-    public class PageAsset
+    public class PageAssetQuery
     {
         public List<Asset> Assets { get; set; }
     }

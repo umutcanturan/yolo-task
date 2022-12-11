@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace yolo.common.models
 {
-    public class Asset
+    public class PriceQuery
     {
-        public string AssetName { get; set; }
-        public string AssetSymbol { get; set; }
-        public long? MarketCap { get; set; }
+        public List<Market> Markets { get; set; }
     }
 }

@@ -18,18 +18,54 @@ namespace yolo.service.implementations
             _graphQLClient= graphQLClient;
         }
 
-        public async Task<IEnumerable<Asset>> GetAssets(int limit = 20, int offset = 0)
+        public async Task<IEnumerable<Asset>> FetchAllAssets()
         {
-            var list = new List<Asset>();
             var query = new GraphQLRequest
             {
-                
-                Query = "query PageAssets {  assets(page: {    skip: "+ offset +",    limit: "+ limit +"  }, sort: [{marketCapRank: ASC}]) {    assetName    assetSymbol    marketCap  }}",
+                Query = "query PageAssets {  assets(sort: [{marketCapRank: ASC}]) {    assetName    assetSymbol    marketCap  }}",
                 Variables = null,
                 OperationName= "PageAssets",
             };
-            var response = await _graphQLClient.SendQueryAsync<PageAsset>(query);
-            list = response.Data.Assets;
+            //page: {    skip: "+ offset +",    limit: "+ limit +"  }
+            var response = await _graphQLClient.SendQueryAsync<PageAssetQuery>(query);
+            if (response.Data == null)
+            {
+                throw new Exception(string.Concat(response.Errors.Select(p => p.Message)));
+            }
+            return response.Data.Assets;
+        }
+
+        public async Task<IEnumerable<Market>> FetchMarketPrices()
+        {
+            int offset = 20;
+            int count = 0;
+            var assets = await FetchAllAssets();
+            var list = new List<Market>();
+            while(count < assets.Count())
+            {
+                int batchCount = count + offset <= assets.Count() ? offset : assets.Count() - count;
+                var symbols = string.Join(",", assets.Skip(count).Take(batchCount).Select(p => "\"" + p.AssetSymbol + "\""));
+                var query = new GraphQLRequest
+                {
+                    Query = "query price {markets(filter: {baseSymbol: {_in: [" + symbols + "]}, quoteSymbol: {_eq: \"EUR\"}, exchangeSymbol: {_eq: \"Binance\"}}) {marketSymbol ticker {lastPrice}}}",
+                    Variables = null,
+                    OperationName = "price"
+                };
+                var response = await _graphQLClient.SendQueryAsync<PriceQuery>(query);
+                if(response.Data == null)
+                {
+                    throw new Exception(string.Concat(response.Errors.Select(p => p.Message)));
+                }
+                list.AddRange(response.Data.Markets);
+
+                if(count + offset > assets.Count())
+                {
+                    count = assets.Count();
+                }else
+                {
+                    count += offset;
+                }
+            }
             return list;
         }
     }
