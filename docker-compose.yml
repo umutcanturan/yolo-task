@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  yolo.api:
+    image: ${DOCKER_REGISTRY-}yolo
+    build:
+      context: .
+      dockerfile: yolo.api/Dockerfile
