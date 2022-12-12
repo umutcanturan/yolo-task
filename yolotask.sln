@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yolo.service.test", "tests\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yolo.service.commands", "yolo.service.commands\yolo.service.commands.csproj", "{9A3A44CF-B750-44B6-8E30-7727A96EAF4A}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9818221F-90CF-440E-9219-715B08D7E405}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{9A3A44CF-B750-44B6-8E30-7727A96EAF4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A3A44CF-B750-44B6-8E30-7727A96EAF4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A3A44CF-B750-44B6-8E30-7727A96EAF4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9818221F-90CF-440E-9219-715B08D7E405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9818221F-90CF-440E-9219-715B08D7E405}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9818221F-90CF-440E-9219-715B08D7E405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9818221F-90CF-440E-9219-715B08D7E405}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
