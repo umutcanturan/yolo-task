@@ -16,4 +16,7 @@
   <ItemGroup>
     <Folder Include="interfaces\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="5.1.0" />
+  </ItemGroup>
 </Project>
