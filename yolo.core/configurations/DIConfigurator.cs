@@ -23,6 +23,7 @@ namespace yolo.core.configurations
             services.AddSingleton<IStringService, StringService>();
 			services.AddScoped<IFunctionService, FunctionService>();
             services.AddScoped<IAssetService, AssetService>();
+			services.AddScoped<IFileService, FileService>();
 
             services.AddScoped<IGraphQLClient>(s => new GraphQLHttpClient(configuration["GraphQLURI"] ?? "", new NewtonsoftJsonSerializer()));
         }
