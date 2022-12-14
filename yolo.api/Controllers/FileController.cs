@@ -22,8 +22,7 @@ namespace yolo.api.Controllers
         [HttpPost]
         public IActionResult Post(string path, string localName)
         {
-            var result = _fileService.ComputeSHA(path, localName);
-            return Ok(result);
+            return Ok(_fileService.ComputeSHA(path, localName));
         }
     }
 }
