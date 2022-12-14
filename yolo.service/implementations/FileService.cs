@@ -5,6 +5,7 @@ using System.Net;
 using System.Reflection.Emit;
 using System.Security.Cryptography;
 using System.Text;
+using yolo.common.exceptions;
 using yolo.service.interfaces;
 
 namespace yolo.service.implementations
@@ -22,11 +23,11 @@ namespace yolo.service.implementations
             {
                 localName = @"..//files//docName";
             }
-
             using (WebClient client = new WebClient())
             {
                 client.DownloadFile(path, localName);
             }
+
 
             SHA256 mySHA256 = SHA256Managed.Create();
             StringBuilder str = new StringBuilder();
