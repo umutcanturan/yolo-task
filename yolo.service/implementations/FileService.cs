@@ -2,6 +2,7 @@
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
+using yolo.common.exceptions;
 using yolo.service.interfaces;
 
 namespace yolo.service.implementations
