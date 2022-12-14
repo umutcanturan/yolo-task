@@ -28,6 +28,10 @@ namespace yolo.service.implementations
             };
             //page: {    skip: "+ offset +",    limit: "+ limit +"  }
             var response = await _graphQLClient.SendQueryAsync<PageAssetQuery>(query);
+            if(response == null)
+            {
+                throw new Exception("response is null");
+            }
             if (response.Data == null)
             {
                 throw new Exception(string.Concat(response.Errors.Select(p => p.Message)));

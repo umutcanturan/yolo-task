@@ -35,7 +35,7 @@ namespace yolo.service.implementations
             }
             catch (Exception ex)
             {
-                throw new Exception("File Download Failed:" + ex.Message);
+                throw new FileDownloadFailedException("File download failed:" + ex.Message);
             }
            
             const int chunkSize = 1024000;
