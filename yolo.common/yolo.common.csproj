@@ -21,4 +21,7 @@
     <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="helpers\" />
+  </ItemGroup>
 </Project>
