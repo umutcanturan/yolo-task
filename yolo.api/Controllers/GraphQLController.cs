@@ -14,6 +14,10 @@ namespace yolo.api.Controllers
             _assetService= assetService;
         }
 
+        /// <summary>
+        /// Fetches the market prices according to assets
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Get()
         {

@@ -15,6 +15,12 @@ namespace yolo.api.Controllers
             _functionService = functionService;
         }
 
+        /// <summary>
+        /// if useEvent is true, then async and event based logic triggered, 
+        /// otherwise, mediatr pattern will be triggered.
+        /// </summary>
+        /// <param name="useEvent">Indicates the selected logic</param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> Get(bool useEvent = false)
         {

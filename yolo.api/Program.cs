@@ -23,7 +23,8 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseAuthorization();
-// following code can be moved to an extension/middleware
+
+
 app.UseExceptionHandler(appError =>
 {
     appError.Run(async context =>
