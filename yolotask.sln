@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yolo.api", "yolo.api\yolo.api.csproj", "{09B96801-E524-4076-8DD8-F1A031B0917A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yolo.core", "yolo.core\yolo.core.csproj", "{5EAD099E-0E6B-4657-B233-065BBD9B3553}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yolo.common", "yolo.common\yolo.common.csproj", "{C81C2607-9209-41F0-9B95-C7A4DD791AA4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yolo.service", "yolo.service\yolo.service.csproj", "{64AD5656-DB75-454B-A87C-075913CF42F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "yolo.service.test", "tests\yolo.service.test\yolo.service.test.csproj", "{2860FDE5-75E9-4D23-BC8D-570ACA125920}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yolo.service.commands", "yolo.service.commands\yolo.service.commands.csproj", "{9A3A44CF-B750-44B6-8E30-7727A96EAF4A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9818221F-90CF-440E-9219-715B08D7E405}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09B96801-E524-4076-8DD8-F1A031B0917A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09B96801-E524-4076-8DD8-F1A031B0917A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09B96801-E524-4076-8DD8-F1A031B0917A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09B96801-E524-4076-8DD8-F1A031B0917A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EAD099E-0E6B-4657-B233-065BBD9B3553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EAD099E-0E6B-4657-B233-065BBD9B3553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EAD099E-0E6B-4657-B233-065BBD9B3553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EAD099E-0E6B-4657-B233-065BBD9B3553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81C2607-9209-41F0-9B95-C7A4DD791AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81C2607-9209-41F0-9B95-C7A4DD791AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81C2607-9209-41F0-9B95-C7A4DD791AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81C2607-9209-41F0-9B95-C7A4DD791AA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64AD5656-DB75-454B-A87C-075913CF42F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64AD5656-DB75-454B-A87C-075913CF42F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64AD5656-DB75-454B-A87C-075913CF42F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64AD5656-DB75-454B-A87C-075913CF42F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2860FDE5-75E9-4D23-BC8D-570ACA125920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2860FDE5-75E9-4D23-BC8D-570ACA125920}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2860FDE5-75E9-4D23-BC8D-570ACA125920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2860FDE5-75E9-4D23-BC8D-570ACA125920}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A3A44CF-B750-44B6-8E30-7727A96EAF4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A3A44CF-B750-44B6-8E30-7727A96EAF4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A3A44CF-B750-44B6-8E30-7727A96EAF4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A3A44CF-B750-44B6-8E30-7727A96EAF4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9818221F-90CF-440E-9219-715B08D7E405}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9818221F-90CF-440E-9219-715B08D7E405}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9818221F-90CF-440E-9219-715B08D7E405}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {055B38F7-12E9-440C-BE18-468D3F355DC4}
+	EndGlobalSection
+EndGlobal

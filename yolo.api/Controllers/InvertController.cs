@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using yolo.common.models;
+using yolo.service.interfaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,11 +14,33 @@ namespace yolo.api.Controllers
     [Route("api/[controller]")]
     public class InvertController : Controller
     {
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly IStringService _stringService;
+        private readonly AppData _appData;
+        public InvertController(IStringService stringService, IOptions<AppData> options)
         {
-            return new string[] { "value1", "value2" };
+            _stringService = stringService;
+            _appData = options.Value;
+        }
+
+        /// <summary>
+        /// returns the reverse of item parameter
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        [HttpGet("item")]
+        public IActionResult Get(string item)
+        {
+            return Ok(_stringService.Reverse(item));
+        }
+
+        /// <summary>
+        /// Returns default text from appsettings.json
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok(_stringService.Reverse(_appData.ReverseStr));
         }
     }
 }

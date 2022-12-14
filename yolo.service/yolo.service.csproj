@@ -8,6 +8,16 @@
 
   <ItemGroup>
     <ProjectReference Include="..\yolo.common\yolo.common.csproj" />
-    <ProjectReference Include="..\yolo.core\yolo.core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="implementations\" />
+    <None Remove="interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="5.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
   </ItemGroup>
 </Project>
